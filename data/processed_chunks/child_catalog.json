@@ -1,12 +1,12 @@
 [
   {
-    "id": "e65be053-27f3-438f-a1ed-74e0969cb0ca",
-    "parent_id": "7f645fc2-4134-4b47-ad5a-7597d967d5b6",
+    "id": "ac597f5d-d00a-4abe-9d34-b831b75ecefa",
+    "parent_id": "8ece7f27-58c4-4338-9d12-2da5ec3947e8",
     "content": "# Standard Operating Procedure: Production API Deployment ## 1. Overview and Pre-Deployment Gates\nAll microservices deployed to production Kubernetes clusters must pass automated CI/CD pipeline checks before traffic migration.",
     "chunk_type": "child",
     "chunk_index": 0,
     "metadata": {
-      "doc_id": "abb01241-a73d-4986-a395-6787774771c3",
+      "doc_id": "b1708bb1-9a2d-4290-98bf-77103e7e3e73",
       "title": "Engineering API Deployment SOP",
       "department": "engineering",
       "clearance_level": "internal",
@@ -15,12 +15,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "internal",
-        "kubernetes",
-        "deployment",
         "api",
-        "engineering",
-        "sop"
+        "internal",
+        "deployment",
+        "kubernetes",
+        "sop",
+        "engineering"
       ],
       "source_file": "api_deployment_sop.md",
       "allowed_roles": [
@@ -35,13 +35,13 @@
     "estimated_token_count": 56
   },
   {
-    "id": "defb2ab0-ee46-4640-b6e3-56582d582246",
-    "parent_id": "7f645fc2-4134-4b47-ad5a-7597d967d5b6",
+    "id": "04fa6540-a6f6-454d-8d5d-bb6da0feebfe",
+    "parent_id": "8ece7f27-58c4-4338-9d12-2da5ec3947e8",
     "content": "Prior to initiating a deployment:\n- All unit tests must achieve a minimum of 85% branch coverage. - Vulnerability scans must report zero critical or high severity CVEs. - Load testing must confirm P99 latency remains under 200ms at 1,500 RPS. ## 2.",
     "chunk_type": "child",
     "chunk_index": 1,
     "metadata": {
-      "doc_id": "abb01241-a73d-4986-a395-6787774771c3",
+      "doc_id": "b1708bb1-9a2d-4290-98bf-77103e7e3e73",
       "title": "Engineering API Deployment SOP",
       "department": "engineering",
       "clearance_level": "internal",
@@ -50,12 +50,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "internal",
-        "kubernetes",
-        "deployment",
         "api",
-        "engineering",
-        "sop"
+        "internal",
+        "deployment",
+        "kubernetes",
+        "sop",
+        "engineering"
       ],
       "source_file": "api_deployment_sop.md",
       "allowed_roles": [
@@ -70,13 +70,13 @@
     "estimated_token_count": 62
   },
   {
-    "id": "aef3fe62-050c-4901-a53d-20204e2fd779",
-    "parent_id": "7f645fc2-4134-4b47-ad5a-7597d967d5b6",
+    "id": "43212647-3982-4711-9421-d8fa3eb10f0f",
+    "parent_id": "8ece7f27-58c4-4338-9d12-2da5ec3947e8",
     "content": "## 2. Canary Deployment Strategy\nDeployments must execute via progressive canary rollout:\n1. **Canary Phase 1 (5% traffic):** Traffic routed to canary pods for 15 minutes. Error rates must not exceed 0.05%. 2. **Canary Phase 2 (25% traffic):** Traffic increased to 25% for 30 minutes.",
     "chunk_type": "child",
     "chunk_index": 2,
     "metadata": {
-      "doc_id": "abb01241-a73d-4986-a395-6787774771c3",
+      "doc_id": "b1708bb1-9a2d-4290-98bf-77103e7e3e73",
       "title": "Engineering API Deployment SOP",
       "department": "engineering",
       "clearance_level": "internal",
@@ -85,12 +85,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "internal",
-        "kubernetes",
-        "deployment",
         "api",
-        "engineering",
-        "sop"
+        "internal",
+        "deployment",
+        "kubernetes",
+        "sop",
+        "engineering"
       ],
       "source_file": "api_deployment_sop.md",
       "allowed_roles": [
@@ -105,13 +105,13 @@
     "estimated_token_count": 71
   },
   {
-    "id": "0500f148-3220-4581-a422-878b295b92d5",
-    "parent_id": "7f645fc2-4134-4b47-ad5a-7597d967d5b6",
+    "id": "632acd1f-9b46-4486-8fd5-d4328dc668a0",
+    "parent_id": "8ece7f27-58c4-4338-9d12-2da5ec3947e8",
     "content": "Memory utilization must remain below 75%. 3. **Full Promotion (100% traffic):** If all health metrics remain green, the release is promoted to 100% across all production nodes. ## 3.",
     "chunk_type": "child",
     "chunk_index": 3,
     "metadata": {
-      "doc_id": "abb01241-a73d-4986-a395-6787774771c3",
+      "doc_id": "b1708bb1-9a2d-4290-98bf-77103e7e3e73",
       "title": "Engineering API Deployment SOP",
       "department": "engineering",
       "clearance_level": "internal",
@@ -120,12 +120,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "internal",
-        "kubernetes",
-        "deployment",
         "api",
-        "engineering",
-        "sop"
+        "internal",
+        "deployment",
+        "kubernetes",
+        "sop",
+        "engineering"
       ],
       "source_file": "api_deployment_sop.md",
       "allowed_roles": [
@@ -140,13 +140,13 @@
     "estimated_token_count": 45
   },
   {
-    "id": "e859692b-9c9e-45f9-a449-2e3ec8c5e29a",
-    "parent_id": "7f645fc2-4134-4b47-ad5a-7597d967d5b6",
+    "id": "ae0f5505-2012-454a-9065-f330a6ee8d83",
+    "parent_id": "8ece7f27-58c4-4338-9d12-2da5ec3947e8",
     "content": "## 3. Automated Rollback Triggers\nAn automated rollback to the previous stable release hash is triggered immediately if:\n- HTTP 5xx error rate spikes above 0.5% over a 3-minute rolling window.",
     "chunk_type": "child",
     "chunk_index": 4,
     "metadata": {
-      "doc_id": "abb01241-a73d-4986-a395-6787774771c3",
+      "doc_id": "b1708bb1-9a2d-4290-98bf-77103e7e3e73",
       "title": "Engineering API Deployment SOP",
       "department": "engineering",
       "clearance_level": "internal",
@@ -155,12 +155,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "internal",
-        "kubernetes",
-        "deployment",
         "api",
-        "engineering",
-        "sop"
+        "internal",
+        "deployment",
+        "kubernetes",
+        "sop",
+        "engineering"
       ],
       "source_file": "api_deployment_sop.md",
       "allowed_roles": [
@@ -175,13 +175,13 @@
     "estimated_token_count": 48
   },
   {
-    "id": "f79baab7-3c22-41e9-a61f-865fb73f2a5a",
-    "parent_id": "0392f931-b11c-4d1b-aea3-9106fd9bcd47",
+    "id": "8ff60275-42d9-4b60-a665-1735096dd578",
+    "parent_id": "44ad4c4b-1ff7-45e0-a16e-8e5e96bfee9c",
     "content": "- The Kubernetes readiness probe fails for more than 3 consecutive retries on more than 20% of pods. - Latency P95 exceeds 500ms for more than 5 continuous minutes. Rollback command:\n`kubectl rollout undo deployment/api-gateway -n production`",
     "chunk_type": "child",
     "chunk_index": 5,
     "metadata": {
-      "doc_id": "abb01241-a73d-4986-a395-6787774771c3",
+      "doc_id": "b1708bb1-9a2d-4290-98bf-77103e7e3e73",
       "title": "Engineering API Deployment SOP",
       "department": "engineering",
       "clearance_level": "internal",
@@ -190,12 +190,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "internal",
-        "kubernetes",
-        "deployment",
         "api",
-        "engineering",
-        "sop"
+        "internal",
+        "deployment",
+        "kubernetes",
+        "sop",
+        "engineering"
       ],
       "source_file": "api_deployment_sop.md",
       "allowed_roles": [
@@ -210,13 +210,13 @@
     "estimated_token_count": 60
   },
   {
-    "id": "917ba8c5-b2a0-4f52-a1e9-153952fba42c",
-    "parent_id": "92bf52e5-f298-45a3-9fbb-359dfdc30c8a",
+    "id": "018400e7-4b5d-4628-a352-9439f1d77c38",
+    "parent_id": "b8b690ff-41e8-4ca8-a26a-1fc1e01e7678",
     "content": "# Production Error Codes & Incident Severity Matrix ## 1. Incident Severity Definitions and SLAs\n- **Severity P1 (Critical Outage):** Core payment processing or user authentication down. SLA Response Time: 15 minutes. Escalation: VP of Engineering and Incident Commander.",
     "chunk_type": "child",
     "chunk_index": 0,
     "metadata": {
-      "doc_id": "ab4c1ddd-e312-4f78-975e-5308921ea0c2",
+      "doc_id": "7881d5e4-2eab-4a8a-90b2-1ffdf5aadd81",
       "title": "Incident Management & System Error Codes",
       "department": "engineering",
       "clearance_level": "internal",
@@ -225,13 +225,13 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "documentation",
-        "incident",
-        "internal",
-        "engineering",
-        "sre",
         "troubleshooting",
-        "error-codes"
+        "sre",
+        "internal",
+        "documentation",
+        "error-codes",
+        "incident",
+        "engineering"
       ],
       "source_file": "incident_management_codes.md",
       "allowed_roles": [
@@ -246,13 +246,13 @@
     "estimated_token_count": 67
   },
   {
-    "id": "5ec4a4dd-b8f3-492d-b247-8f7882c9ed01",
-    "parent_id": "92bf52e5-f298-45a3-9fbb-359dfdc30c8a",
+    "id": "63229998-e96f-4eb9-8ebb-d2dd9b129660",
+    "parent_id": "b8b690ff-41e8-4ca8-a26a-1fc1e01e7678",
     "content": "- **Severity P2 (Major Degradation):** Non-blocking service failure or customer portal partial impairment. SLA Response Time: 1 hour. Escalation: SRE Lead on-call. - **Severity P3 (Minor Glitch):** Cosmetic UI issues or non-critical background batch job delays. SLA Response Time: 4 business hours.",
     "chunk_type": "child",
     "chunk_index": 1,
     "metadata": {
-      "doc_id": "ab4c1ddd-e312-4f78-975e-5308921ea0c2",
+      "doc_id": "7881d5e4-2eab-4a8a-90b2-1ffdf5aadd81",
       "title": "Incident Management & System Error Codes",
       "department": "engineering",
       "clearance_level": "internal",
@@ -261,13 +261,13 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "documentation",
-        "incident",
-        "internal",
-        "engineering",
-        "sre",
         "troubleshooting",
-        "error-codes"
+        "sre",
+        "internal",
+        "documentation",
+        "error-codes",
+        "incident",
+        "engineering"
       ],
       "source_file": "incident_management_codes.md",
       "allowed_roles": [
@@ -282,13 +282,13 @@
     "estimated_token_count": 74
   },
   {
-    "id": "22d3413a-f318-4413-b0fd-921bcb64a549",
-    "parent_id": "92bf52e5-f298-45a3-9fbb-359dfdc30c8a",
+    "id": "f4ef7bad-e31b-4d7a-8dcb-b1f9686d576d",
+    "parent_id": "b8b690ff-41e8-4ca8-a26a-1fc1e01e7678",
     "content": "SLA Response Time: 4 business hours. ## 2. Standard Production Error Code Reference\nThe following error codes correspond to internal telemetry events: - `ERR-502-TIMEOUT`: Upstream gateway timed out waiting for backend gRPC response (>30,000ms).",
     "chunk_type": "child",
     "chunk_index": 2,
     "metadata": {
-      "doc_id": "ab4c1ddd-e312-4f78-975e-5308921ea0c2",
+      "doc_id": "7881d5e4-2eab-4a8a-90b2-1ffdf5aadd81",
       "title": "Incident Management & System Error Codes",
       "department": "engineering",
       "clearance_level": "internal",
@@ -297,13 +297,13 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "documentation",
-        "incident",
-        "internal",
-        "engineering",
-        "sre",
         "troubleshooting",
-        "error-codes"
+        "sre",
+        "internal",
+        "documentation",
+        "error-codes",
+        "incident",
+        "engineering"
       ],
       "source_file": "incident_management_codes.md",
       "allowed_roles": [
@@ -318,13 +318,13 @@
     "estimated_token_count": 61
   },
   {
-    "id": "f9589d83-5c1e-4c24-82ba-c9b105951abc",
-    "parent_id": "92bf52e5-f298-45a3-9fbb-359dfdc30c8a",
+    "id": "3923e8a9-12ad-4484-96a4-2e54ba623437",
+    "parent_id": "b8b690ff-41e8-4ca8-a26a-1fc1e01e7678",
     "content": "Action: Check Redis connection pool saturation on node cluster `SKU-PROD-CLUSTER-A4`. - `ERR-901-DATABASE-FAILOVER`: Primary PostgreSQL node disconnected. Automatic read-replica promotion initiated. Action: Verify split-brain prevention lock in Consul.",
     "chunk_type": "child",
     "chunk_index": 3,
     "metadata": {
-      "doc_id": "ab4c1ddd-e312-4f78-975e-5308921ea0c2",
+      "doc_id": "7881d5e4-2eab-4a8a-90b2-1ffdf5aadd81",
       "title": "Incident Management & System Error Codes",
       "department": "engineering",
       "clearance_level": "internal",
@@ -333,13 +333,13 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "documentation",
-        "incident",
-        "internal",
-        "engineering",
-        "sre",
         "troubleshooting",
-        "error-codes"
+        "sre",
+        "internal",
+        "documentation",
+        "error-codes",
+        "incident",
+        "engineering"
       ],
       "source_file": "incident_management_codes.md",
       "allowed_roles": [
@@ -354,13 +354,13 @@
     "estimated_token_count": 63
   },
   {
-    "id": "f569bb2c-530f-4a25-9e65-6e303a8a9a33",
-    "parent_id": "92bf52e5-f298-45a3-9fbb-359dfdc30c8a",
+    "id": "2bef8960-25a0-40d3-be11-25a07f225a22",
+    "parent_id": "b8b690ff-41e8-4ca8-a26a-1fc1e01e7678",
     "content": "- `ERR-403-TOKEN-EXPIRED`: JSON Web Token signature verification failed or token passed 24-hour expiration threshold. Client must re-authenticate with refresh token.",
     "chunk_type": "child",
     "chunk_index": 4,
     "metadata": {
-      "doc_id": "ab4c1ddd-e312-4f78-975e-5308921ea0c2",
+      "doc_id": "7881d5e4-2eab-4a8a-90b2-1ffdf5aadd81",
       "title": "Incident Management & System Error Codes",
       "department": "engineering",
       "clearance_level": "internal",
@@ -369,13 +369,13 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "documentation",
-        "incident",
-        "internal",
-        "engineering",
-        "sre",
         "troubleshooting",
-        "error-codes"
+        "sre",
+        "internal",
+        "documentation",
+        "error-codes",
+        "incident",
+        "engineering"
       ],
       "source_file": "incident_management_codes.md",
       "allowed_roles": [
@@ -390,13 +390,13 @@
     "estimated_token_count": 41
   },
   {
-    "id": "203ece18-6c96-45c3-85f6-b75ef5cba182",
-    "parent_id": "4e54ea9c-be4b-4e21-83cb-8ea8e3d324d5",
+    "id": "46bda211-c2bc-4160-abf0-c4800150f012",
+    "parent_id": "a0011a99-b551-4bea-9500-69ef44d6ebe6",
     "content": "Client must re-authenticate with refresh token. - `ERR-304-CACHE-STALE`: Local edge cache TTL expired. Automatic cache invalidation sent to Cloudflare edge nodes.",
     "chunk_type": "child",
     "chunk_index": 5,
     "metadata": {
-      "doc_id": "ab4c1ddd-e312-4f78-975e-5308921ea0c2",
+      "doc_id": "7881d5e4-2eab-4a8a-90b2-1ffdf5aadd81",
       "title": "Incident Management & System Error Codes",
       "department": "engineering",
       "clearance_level": "internal",
@@ -405,13 +405,13 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "documentation",
-        "incident",
-        "internal",
-        "engineering",
-        "sre",
         "troubleshooting",
-        "error-codes"
+        "sre",
+        "internal",
+        "documentation",
+        "error-codes",
+        "incident",
+        "engineering"
       ],
       "source_file": "incident_management_codes.md",
       "allowed_roles": [
@@ -426,13 +426,13 @@
     "estimated_token_count": 40
   },
   {
-    "id": "8c39f4b3-8196-476f-b281-919daff339b0",
-    "parent_id": "29241a29-7d91-40b8-ac8b-c8c9b5a5ce37",
+    "id": "98cd1638-8f14-4d1c-8c8a-94c5db5ae0bd",
+    "parent_id": "97a0d167-457d-44b9-8d52-2ce4dc822a01",
     "content": "# STRICTLY CONFIDENTIAL: Executive Compensation & Severance Schedules ## 1. Scope and Access Restrictions\nThis document contains sensitive material regarding executive leadership equity cliffs, severance multiplier formulas, and board-level change-of-control provisions.",
     "chunk_type": "child",
     "chunk_index": 0,
     "metadata": {
-      "doc_id": "291f3caa-92c7-4b75-a431-2e5f3a30bc0e",
+      "doc_id": "b6eae269-be4b-47a2-8768-0b3d923a6c6f",
       "title": "Executive Compensation & Equity Vesting Framework",
       "department": "executive",
       "clearance_level": "restricted",
@@ -459,13 +459,13 @@
     "estimated_token_count": 67
   },
   {
-    "id": "0301c250-a1a0-4699-b3d9-ad223bf49db2",
-    "parent_id": "29241a29-7d91-40b8-ac8b-c8c9b5a5ce37",
+    "id": "e5dddffb-694f-42ed-92f7-fd1146d00f9b",
+    "parent_id": "97a0d167-457d-44b9-8d52-2ce4dc822a01",
     "content": "Access is restricted strictly to C-Suite Officers (CEO, CFO, CTO) and Members of the Board of Directors. ## 2.",
     "chunk_type": "child",
     "chunk_index": 1,
     "metadata": {
-      "doc_id": "291f3caa-92c7-4b75-a431-2e5f3a30bc0e",
+      "doc_id": "b6eae269-be4b-47a2-8768-0b3d923a6c6f",
       "title": "Executive Compensation & Equity Vesting Framework",
       "department": "executive",
       "clearance_level": "restricted",
@@ -492,13 +492,13 @@
     "estimated_token_count": 27
   },
   {
-    "id": "36c0ee4a-700c-4011-b782-91942fff5493",
-    "parent_id": "29241a29-7d91-40b8-ac8b-c8c9b5a5ce37",
+    "id": "39ae95c2-e188-4851-8209-670a911770bc",
+    "parent_id": "97a0d167-457d-44b9-8d52-2ce4dc822a01",
     "content": "## 2. Annual Performance Incentive Plan (APIP)\nExecutive cash bonuses are determined according to annual corporate EBITDA milestones:\n- Threshold attainment (80% of annual recurring revenue target): 50% target payout. - Target attainment (100% ARR target): 100% target payout.",
     "chunk_type": "child",
     "chunk_index": 2,
     "metadata": {
-      "doc_id": "291f3caa-92c7-4b75-a431-2e5f3a30bc0e",
+      "doc_id": "b6eae269-be4b-47a2-8768-0b3d923a6c6f",
       "title": "Executive Compensation & Equity Vesting Framework",
       "department": "executive",
       "clearance_level": "restricted",
@@ -525,13 +525,13 @@
     "estimated_token_count": 69
   },
   {
-    "id": "c5dbedce-1ac2-4117-ba5d-82c7ec03fb3d",
-    "parent_id": "29241a29-7d91-40b8-ac8b-c8c9b5a5ce37",
+    "id": "cd7c1865-e1e9-4880-a03c-557403af4710",
+    "parent_id": "97a0d167-457d-44b9-8d52-2ce4dc822a01",
     "content": "- Maximum outperformance (125%+ ARR target): 200% target payout cap. ## 3.",
     "chunk_type": "child",
     "chunk_index": 3,
     "metadata": {
-      "doc_id": "291f3caa-92c7-4b75-a431-2e5f3a30bc0e",
+      "doc_id": "b6eae269-be4b-47a2-8768-0b3d923a6c6f",
       "title": "Executive Compensation & Equity Vesting Framework",
       "department": "executive",
       "clearance_level": "restricted",
@@ -558,13 +558,13 @@
     "estimated_token_count": 18
   },
   {
-    "id": "ef880ac5-bd08-4edf-af8f-c8d24de5d363",
-    "parent_id": "29241a29-7d91-40b8-ac8b-c8c9b5a5ce37",
+    "id": "8657de46-12b1-4855-8f4d-ee69408b436d",
+    "parent_id": "97a0d167-457d-44b9-8d52-2ce4dc822a01",
     "content": "## 3. Equity Acceleration and Double-Trigger Provisions\nIn the event of a change-of-control transaction (Merger, Acquisition, or Sale of Assets):\n- 100% of unvested Restricted Stock Units (RSUs) accelerate immediately upon termination without cause within 12 months following transaction close (Double-Trigger Clause).",
     "chunk_type": "child",
     "chunk_index": 4,
     "metadata": {
-      "doc_id": "291f3caa-92c7-4b75-a431-2e5f3a30bc0e",
+      "doc_id": "b6eae269-be4b-47a2-8768-0b3d923a6c6f",
       "title": "Executive Compensation & Equity Vesting Framework",
       "department": "executive",
       "clearance_level": "restricted",
@@ -591,13 +591,13 @@
     "estimated_token_count": 79
   },
   {
-    "id": "107297c7-08c0-4afa-8b6d-fbac537dcce9",
-    "parent_id": "29241a29-7d91-40b8-ac8b-c8c9b5a5ce37",
+    "id": "ff1142d2-3600-4a3d-8d0f-56055f93ad5f",
+    "parent_id": "97a0d167-457d-44b9-8d52-2ce4dc822a01",
     "content": "- Severance payout equals 18 months of base salary plus prorated target bonus, along with 18 months of subsidized COBRA healthcare continuation.",
     "chunk_type": "child",
     "chunk_index": 5,
     "metadata": {
-      "doc_id": "291f3caa-92c7-4b75-a431-2e5f3a30bc0e",
+      "doc_id": "b6eae269-be4b-47a2-8768-0b3d923a6c6f",
       "title": "Executive Compensation & Equity Vesting Framework",
       "department": "executive",
       "clearance_level": "restricted",
@@ -624,13 +624,13 @@
     "estimated_token_count": 36
   },
   {
-    "id": "2751d0db-d3b8-44aa-8a9f-6427a9f0cb82",
-    "parent_id": "d1d458a0-42a8-452e-b286-be92e0450654",
+    "id": "15f788f2-5d80-4a8b-802c-eeb3952f33dc",
+    "parent_id": "bea3d30b-7041-4dfb-8223-515484d2d5b7",
     "content": "# Corporate Travel, Meals and Expense Reimbursement Policy ## 1. Flight and Transportation Standards\nAll business travel must be booked via Navan (formerly TripActions) at least 14 days in advance to secure favorable enterprise rates.",
     "chunk_type": "child",
     "chunk_index": 0,
     "metadata": {
-      "doc_id": "0dbea292-7e0f-48d8-8a6d-244b3c58becf",
+      "doc_id": "02f1860b-6937-4996-9bf0-c045d9c09719",
       "title": "Corporate Business Travel & Expense Policy",
       "department": "finance",
       "clearance_level": "internal",
@@ -639,12 +639,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "travel",
-        "finance",
-        "internal",
-        "policy",
         "expenses",
-        "reimbursement"
+        "policy",
+        "internal",
+        "reimbursement",
+        "finance",
+        "travel"
       ],
       "source_file": "travel_expense_policy.md",
       "allowed_roles": [
@@ -659,13 +659,13 @@
     "estimated_token_count": 58
   },
   {
-    "id": "50ec649a-9d0a-4464-8dca-964f52d29134",
-    "parent_id": "d1d458a0-42a8-452e-b286-be92e0450654",
+    "id": "273c820f-6797-4923-9037-fa89ad0621da",
+    "parent_id": "bea3d30b-7041-4dfb-8223-515484d2d5b7",
     "content": "- **Domestic Flights (<6 hours flight duration):** Economy class is mandatory for all personnel. - **International / Long-Haul Flights (>6 continuous hours):** Premium Economy is permitted with Director approval.",
     "chunk_type": "child",
     "chunk_index": 1,
     "metadata": {
-      "doc_id": "0dbea292-7e0f-48d8-8a6d-244b3c58becf",
+      "doc_id": "02f1860b-6937-4996-9bf0-c045d9c09719",
       "title": "Corporate Business Travel & Expense Policy",
       "department": "finance",
       "clearance_level": "internal",
@@ -674,12 +674,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "travel",
-        "finance",
-        "internal",
-        "policy",
         "expenses",
-        "reimbursement"
+        "policy",
+        "internal",
+        "reimbursement",
+        "finance",
+        "travel"
       ],
       "source_file": "travel_expense_policy.md",
       "allowed_roles": [
@@ -694,13 +694,13 @@
     "estimated_token_count": 53
   },
   {
-    "id": "23cee1e9-d62d-485e-889d-1c848239de67",
-    "parent_id": "d1d458a0-42a8-452e-b286-be92e0450654",
+    "id": "521cd5ed-be4e-4c1d-8112-df1aefbe23b8",
+    "parent_id": "bea3d30b-7041-4dfb-8223-515484d2d5b7",
     "content": "Business class is reserved exclusively for flights exceeding 10 hours with scheduled client meetings within 12 hours of landing. - **Rideshare and Rental Cars:** Uber/Lyft standard ride types are reimbursable.",
     "chunk_type": "child",
     "chunk_index": 2,
     "metadata": {
-      "doc_id": "0dbea292-7e0f-48d8-8a6d-244b3c58becf",
+      "doc_id": "02f1860b-6937-4996-9bf0-c045d9c09719",
       "title": "Corporate Business Travel & Expense Policy",
       "department": "finance",
       "clearance_level": "internal",
@@ -709,12 +709,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "travel",
-        "finance",
-        "internal",
-        "policy",
         "expenses",
-        "reimbursement"
+        "policy",
+        "internal",
+        "reimbursement",
+        "finance",
+        "travel"
       ],
       "source_file": "travel_expense_policy.md",
       "allowed_roles": [
@@ -729,13 +729,13 @@
     "estimated_token_count": 52
   },
   {
-    "id": "51b24ad9-0bcc-4c8b-b99f-a6fea5166195",
-    "parent_id": "d1d458a0-42a8-452e-b286-be92e0450654",
+    "id": "1f5a32d9-434c-4b9c-80c7-5872af8f645e",
+    "parent_id": "bea3d30b-7041-4dfb-8223-515484d2d5b7",
     "content": "Rental car reservations are restricted to intermediate/sedan category unless traveling with 3+ colleagues. ## 2.",
     "chunk_type": "child",
     "chunk_index": 3,
     "metadata": {
-      "doc_id": "0dbea292-7e0f-48d8-8a6d-244b3c58becf",
+      "doc_id": "02f1860b-6937-4996-9bf0-c045d9c09719",
       "title": "Corporate Business Travel & Expense Policy",
       "department": "finance",
       "clearance_level": "internal",
@@ -744,12 +744,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "travel",
-        "finance",
-        "internal",
-        "policy",
         "expenses",
-        "reimbursement"
+        "policy",
+        "internal",
+        "reimbursement",
+        "finance",
+        "travel"
       ],
       "source_file": "travel_expense_policy.md",
       "allowed_roles": [
@@ -764,13 +764,13 @@
     "estimated_token_count": 28
   },
   {
-    "id": "7b0a19bd-0eeb-4efe-a1a4-b07c7d51a39c",
-    "parent_id": "d1d458a0-42a8-452e-b286-be92e0450654",
+    "id": "9629bd22-c661-4df0-bf36-ea74d8855fbf",
+    "parent_id": "bea3d30b-7041-4dfb-8223-515484d2d5b7",
     "content": "## 2. Daily Meals & Incidentals Per Diem (M&IE)\nDaily meal allowances operate under a fixed per diem cap:\n- **Domestic Travel:** Up to $75 USD per full travel day ($15 Breakfast, $25 Lunch, $35 Dinner). Alcohol is non-reimbursable unless hosting approved client entertainment.",
     "chunk_type": "child",
     "chunk_index": 4,
     "metadata": {
-      "doc_id": "0dbea292-7e0f-48d8-8a6d-244b3c58becf",
+      "doc_id": "02f1860b-6937-4996-9bf0-c045d9c09719",
       "title": "Corporate Business Travel & Expense Policy",
       "department": "finance",
       "clearance_level": "internal",
@@ -779,12 +779,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "travel",
-        "finance",
-        "internal",
-        "policy",
         "expenses",
-        "reimbursement"
+        "policy",
+        "internal",
+        "reimbursement",
+        "finance",
+        "travel"
       ],
       "source_file": "travel_expense_policy.md",
       "allowed_roles": [
@@ -799,13 +799,13 @@
     "estimated_token_count": 69
   },
   {
-    "id": "596cce8c-6cd7-4d4e-a01d-2b936249f9e8",
-    "parent_id": "d1d458a0-42a8-452e-b286-be92e0450654",
+    "id": "3733f0f8-a3a3-4e5b-90eb-96eb83d5c358",
+    "parent_id": "bea3d30b-7041-4dfb-8223-515484d2d5b7",
     "content": "- **International Travel:** Up to $120 USD per travel day.",
     "chunk_type": "child",
     "chunk_index": 5,
     "metadata": {
-      "doc_id": "0dbea292-7e0f-48d8-8a6d-244b3c58becf",
+      "doc_id": "02f1860b-6937-4996-9bf0-c045d9c09719",
       "title": "Corporate Business Travel & Expense Policy",
       "department": "finance",
       "clearance_level": "internal",
@@ -814,12 +814,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "travel",
-        "finance",
-        "internal",
-        "policy",
         "expenses",
-        "reimbursement"
+        "policy",
+        "internal",
+        "reimbursement",
+        "finance",
+        "travel"
       ],
       "source_file": "travel_expense_policy.md",
       "allowed_roles": [
@@ -834,13 +834,13 @@
     "estimated_token_count": 14
   },
   {
-    "id": "9cd3a2ea-9696-4658-a405-8d969bbb12b2",
-    "parent_id": "9a355705-35ae-47c0-a69e-6ae30bc81bf2",
+    "id": "a750eb9d-ae3e-420d-9e3b-30dc1a4d7d71",
+    "parent_id": "e9419f36-7e93-4ca4-a778-dba5861b490c",
     "content": "Alcohol is non-reimbursable unless hosting approved client entertainment. - **International Travel:** Up to $120 USD per travel day. - **Receipt Submission Deadline:** All expense reports, accompanied by itemized tax receipts, must be submitted via Concur within 14 calendar days of trip conclusion.",
     "chunk_type": "child",
     "chunk_index": 6,
     "metadata": {
-      "doc_id": "0dbea292-7e0f-48d8-8a6d-244b3c58becf",
+      "doc_id": "02f1860b-6937-4996-9bf0-c045d9c09719",
       "title": "Corporate Business Travel & Expense Policy",
       "department": "finance",
       "clearance_level": "internal",
@@ -849,12 +849,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "travel",
-        "finance",
-        "internal",
-        "policy",
         "expenses",
-        "reimbursement"
+        "policy",
+        "internal",
+        "reimbursement",
+        "finance",
+        "travel"
       ],
       "source_file": "travel_expense_policy.md",
       "allowed_roles": [
@@ -869,13 +869,13 @@
     "estimated_token_count": 74
   },
   {
-    "id": "0ceea80a-7fd6-43ab-a8e5-c8f157f671c1",
-    "parent_id": "9a355705-35ae-47c0-a69e-6ae30bc81bf2",
+    "id": "b73271c8-90b5-423d-8a32-3a752daf777d",
+    "parent_id": "e9419f36-7e93-4ca4-a778-dba5861b490c",
     "content": "Submissions past 30 days are subject to automatic forfeiture.",
     "chunk_type": "child",
     "chunk_index": 7,
     "metadata": {
-      "doc_id": "0dbea292-7e0f-48d8-8a6d-244b3c58becf",
+      "doc_id": "02f1860b-6937-4996-9bf0-c045d9c09719",
       "title": "Corporate Business Travel & Expense Policy",
       "department": "finance",
       "clearance_level": "internal",
@@ -884,12 +884,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "travel",
-        "finance",
-        "internal",
-        "policy",
         "expenses",
-        "reimbursement"
+        "policy",
+        "internal",
+        "reimbursement",
+        "finance",
+        "travel"
       ],
       "source_file": "travel_expense_policy.md",
       "allowed_roles": [
@@ -904,13 +904,13 @@
     "estimated_token_count": 15
   },
   {
-    "id": "38811f7f-97ec-4410-a422-1f41db85d6fe",
-    "parent_id": "2ef59561-de96-47e9-b212-47f943776f00",
+    "id": "189f8869-54cf-435e-b2d3-8ca318bf1b9f",
+    "parent_id": "dd5cfbb5-c70b-402c-9d1e-4e43b77238a4",
     "content": "# Corporate Health, Dental and Wellness Benefits Overview ## 1. Medical and Dental Coverage\nOur comprehensive health insurance plan provides coverage for employees and eligible dependents:\n- **In-Network Deductible:** $500 individual / $1,000 family.",
     "chunk_type": "child",
     "chunk_index": 0,
     "metadata": {
-      "doc_id": "91aee558-759f-4c24-af0d-bf91c5f68839",
+      "doc_id": "f40d8617-ed55-4694-9df5-2f125dbbca9c",
       "title": "Employee Health and Wellness Benefits Overview",
       "department": "hr",
       "clearance_level": "internal",
@@ -919,11 +919,11 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "documentation",
         "dental",
-        "hr",
         "internal",
         "health",
+        "documentation",
+        "hr",
         "benefits"
       ],
       "source_file": "health_benefits_overview.md",
@@ -939,13 +939,13 @@
     "estimated_token_count": 62
   },
   {
-    "id": "9535b5cf-2860-4be1-815f-625049eb15cc",
-    "parent_id": "2ef59561-de96-47e9-b212-47f943776f00",
+    "id": "5c0dbd51-f2f1-443e-9001-28929f214dd7",
+    "parent_id": "dd5cfbb5-c70b-402c-9d1e-4e43b77238a4",
     "content": "- **Dental Benefits:** 100% coverage for routine preventive cleanings (2 per year). 80% coverage for minor restorative procedures up to an annual maximum of $2,000 USD per covered individual. Orthodontia is covered at 50% with a lifetime maximum of $3,000 USD.",
     "chunk_type": "child",
     "chunk_index": 1,
     "metadata": {
-      "doc_id": "91aee558-759f-4c24-af0d-bf91c5f68839",
+      "doc_id": "f40d8617-ed55-4694-9df5-2f125dbbca9c",
       "title": "Employee Health and Wellness Benefits Overview",
       "department": "hr",
       "clearance_level": "internal",
@@ -954,11 +954,11 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "documentation",
         "dental",
-        "hr",
         "internal",
         "health",
+        "documentation",
+        "hr",
         "benefits"
       ],
       "source_file": "health_benefits_overview.md",
@@ -974,13 +974,13 @@
     "estimated_token_count": 65
   },
   {
-    "id": "455e5530-e6b7-41c4-9519-327ecd2891f0",
-    "parent_id": "2ef59561-de96-47e9-b212-47f943776f00",
+    "id": "f90bafa1-79c3-45d6-9659-67b9d6a6eebe",
+    "parent_id": "dd5cfbb5-c70b-402c-9d1e-4e43b77238a4",
     "content": "- **Optical & Vision Care:** Vision examination copay is $10. Eyeglass frames and contact lenses receive a $350 USD biennial allowance (every 24 months). ## 2.",
     "chunk_type": "child",
     "chunk_index": 2,
     "metadata": {
-      "doc_id": "91aee558-759f-4c24-af0d-bf91c5f68839",
+      "doc_id": "f40d8617-ed55-4694-9df5-2f125dbbca9c",
       "title": "Employee Health and Wellness Benefits Overview",
       "department": "hr",
       "clearance_level": "internal",
@@ -989,11 +989,11 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "documentation",
         "dental",
-        "hr",
         "internal",
         "health",
+        "documentation",
+        "hr",
         "benefits"
       ],
       "source_file": "health_benefits_overview.md",
@@ -1009,13 +1009,13 @@
     "estimated_token_count": 39
   },
   {
-    "id": "ed143a18-4879-434e-b4d6-9c2b29f37a5d",
-    "parent_id": "2ef59561-de96-47e9-b212-47f943776f00",
+    "id": "4b9324e1-2b22-4121-aab6-5474c6d8a061",
+    "parent_id": "dd5cfbb5-c70b-402c-9d1e-4e43b77238a4",
     "content": "## 2. Mental Health & Employee Assistance Program (EAP)\nWe partner with ModernHealth to provide confidential mental health support:\n- 6 free 1-on-1 therapy sessions per calendar year for every employee and their immediate family members.",
     "chunk_type": "child",
     "chunk_index": 3,
     "metadata": {
-      "doc_id": "91aee558-759f-4c24-af0d-bf91c5f68839",
+      "doc_id": "f40d8617-ed55-4694-9df5-2f125dbbca9c",
       "title": "Employee Health and Wellness Benefits Overview",
       "department": "hr",
       "clearance_level": "internal",
@@ -1024,11 +1024,11 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "documentation",
         "dental",
-        "hr",
         "internal",
         "health",
+        "documentation",
+        "hr",
         "benefits"
       ],
       "source_file": "health_benefits_overview.md",
@@ -1044,13 +1044,13 @@
     "estimated_token_count": 59
   },
   {
-    "id": "03885806-5bd3-41dd-a736-0c2c7a8543d5",
-    "parent_id": "2ef59561-de96-47e9-b212-47f943776f00",
+    "id": "6ddd2faf-bae7-4bae-9866-b723014d9e40",
+    "parent_id": "dd5cfbb5-c70b-402c-9d1e-4e43b77238a4",
     "content": "- Unlimited access to guided meditation, stress management courses, and licensed certified life coaches. - 24/7 crisis hotline accessible toll-free at 1-800-555-WELL.",
     "chunk_type": "child",
     "chunk_index": 4,
     "metadata": {
-      "doc_id": "91aee558-759f-4c24-af0d-bf91c5f68839",
+      "doc_id": "f40d8617-ed55-4694-9df5-2f125dbbca9c",
       "title": "Employee Health and Wellness Benefits Overview",
       "department": "hr",
       "clearance_level": "internal",
@@ -1059,11 +1059,11 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "documentation",
         "dental",
-        "hr",
         "internal",
         "health",
+        "documentation",
+        "hr",
         "benefits"
       ],
       "source_file": "health_benefits_overview.md",
@@ -1079,13 +1079,13 @@
     "estimated_token_count": 41
   },
   {
-    "id": "3b8e9922-8711-4734-a395-074dd88c0a87",
-    "parent_id": "dfc71176-a8ec-42e1-8f31-534bf28eddda",
+    "id": "d4e0612f-c3eb-4916-bded-d8a5dfdfc139",
+    "parent_id": "29365d43-112a-425f-a5a9-cfee88dcb938",
     "content": "# Global Employee Leave and Remote Working Policy ## 1. Annual Leave Entitlement\nFull-time regular employees accrue 24 paid annual leave days per calendar year. - A maximum of 5 unused leave days may be carried over into the following year, expiring by March 31st.",
     "chunk_type": "child",
     "chunk_index": 0,
     "metadata": {
-      "doc_id": "64483e26-5a4b-4351-b531-cb4f553555c6",
+      "doc_id": "0ac11ffe-e32a-4f15-8da7-474a1a333494",
       "title": "Global Leave and Remote Work Policy",
       "department": "hr",
       "clearance_level": "internal",
@@ -1094,12 +1094,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "leave",
-        "hr",
-        "internal",
+        "policy",
         "workplace",
-        "remote-work",
-        "policy"
+        "internal",
+        "hr",
+        "leave",
+        "remote-work"
       ],
       "source_file": "leave_and_remote_work_policy.md",
       "allowed_roles": [
@@ -1114,13 +1114,13 @@
     "estimated_token_count": 66
   },
   {
-    "id": "85d61f68-5cf9-46c9-b321-380faa9a8f39",
-    "parent_id": "dfc71176-a8ec-42e1-8f31-534bf28eddda",
+    "id": "ecc8da98-8ea4-4f05-9466-134a8f4c22fa",
+    "parent_id": "29365d43-112a-425f-a5a9-cfee88dcb938",
     "content": "- Leave requests exceeding 5 consecutive business days require manager approval at least 14 days in advance via Workday. - Sick leave: Employees receive up to 10 paid sick leave days annually with no medical certificate required for absences under 2 days. ## 2.",
     "chunk_type": "child",
     "chunk_index": 1,
     "metadata": {
-      "doc_id": "64483e26-5a4b-4351-b531-cb4f553555c6",
+      "doc_id": "0ac11ffe-e32a-4f15-8da7-474a1a333494",
       "title": "Global Leave and Remote Work Policy",
       "department": "hr",
       "clearance_level": "internal",
@@ -1129,12 +1129,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "leave",
-        "hr",
-        "internal",
+        "policy",
         "workplace",
-        "remote-work",
-        "policy"
+        "internal",
+        "hr",
+        "leave",
+        "remote-work"
       ],
       "source_file": "leave_and_remote_work_policy.md",
       "allowed_roles": [
@@ -1149,13 +1149,13 @@
     "estimated_token_count": 65
   },
   {
-    "id": "4c2bf5c1-f65d-458f-9f7c-65ec10d51f76",
-    "parent_id": "dfc71176-a8ec-42e1-8f31-534bf28eddda",
+    "id": "4a065303-6930-4a0c-91af-0099336157c0",
+    "parent_id": "29365d43-112a-425f-a5a9-cfee88dcb938",
     "content": "## 2. Remote and Hybrid Work Guidelines\nEmployees working in hybrid-eligible roles may work remotely up to 3 days per week. - **Core Collaboration Hours:** All employees, regardless of location, must remain accessible on Slack and email between 10:00 AM and 4:00 PM Eastern Standard Time (EST).",
     "chunk_type": "child",
     "chunk_index": 2,
     "metadata": {
-      "doc_id": "64483e26-5a4b-4351-b531-cb4f553555c6",
+      "doc_id": "0ac11ffe-e32a-4f15-8da7-474a1a333494",
       "title": "Global Leave and Remote Work Policy",
       "department": "hr",
       "clearance_level": "internal",
@@ -1164,12 +1164,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "leave",
-        "hr",
-        "internal",
+        "policy",
         "workplace",
-        "remote-work",
-        "policy"
+        "internal",
+        "hr",
+        "leave",
+        "remote-work"
       ],
       "source_file": "leave_and_remote_work_policy.md",
       "allowed_roles": [
@@ -1184,13 +1184,13 @@
     "estimated_token_count": 73
   },
   {
-    "id": "26aad030-4345-426f-b398-b793ba956292",
-    "parent_id": "dfc71176-a8ec-42e1-8f31-534bf28eddda",
+    "id": "4b05a724-b032-4822-a80b-c16ab77146d0",
+    "parent_id": "29365d43-112a-425f-a5a9-cfee88dcb938",
     "content": "- **Home Office Setup Allowance:** Full-time permanent employees are eligible for a one-time reimbursement of up to $500 USD for ergonomic equipment (monitors, chairs, standing desk converters). Receipts must be submitted within 60 days of hire.",
     "chunk_type": "child",
     "chunk_index": 3,
     "metadata": {
-      "doc_id": "64483e26-5a4b-4351-b531-cb4f553555c6",
+      "doc_id": "0ac11ffe-e32a-4f15-8da7-474a1a333494",
       "title": "Global Leave and Remote Work Policy",
       "department": "hr",
       "clearance_level": "internal",
@@ -1199,12 +1199,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "leave",
-        "hr",
-        "internal",
+        "policy",
         "workplace",
-        "remote-work",
-        "policy"
+        "internal",
+        "hr",
+        "leave",
+        "remote-work"
       ],
       "source_file": "leave_and_remote_work_policy.md",
       "allowed_roles": [
@@ -1219,13 +1219,13 @@
     "estimated_token_count": 61
   },
   {
-    "id": "a05f0dee-2a27-4a2b-874e-f185b6e9f60b",
-    "parent_id": "e3224ae9-c272-47ba-b916-a94abd6322dc",
+    "id": "06d14f21-feef-44f2-a0d7-fb26ef71ffaa",
+    "parent_id": "5b96d223-6eae-4489-bd0b-479ddf727cb0",
     "content": "Receipts must be submitted within 60 days of hire. - **Work From Anywhere:** Employees may work from an approved international location for up to 30 calendar days per rolling 12 months, subject to tax compliance clearance.",
     "chunk_type": "child",
     "chunk_index": 4,
     "metadata": {
-      "doc_id": "64483e26-5a4b-4351-b531-cb4f553555c6",
+      "doc_id": "0ac11ffe-e32a-4f15-8da7-474a1a333494",
       "title": "Global Leave and Remote Work Policy",
       "department": "hr",
       "clearance_level": "internal",
@@ -1234,12 +1234,12 @@
       "version": "1.0.0",
       "created_date": "2026-10-18",
       "tags": [
-        "leave",
-        "hr",
-        "internal",
+        "policy",
         "workplace",
-        "remote-work",
-        "policy"
+        "internal",
+        "hr",
+        "leave",
+        "remote-work"
       ],
       "source_file": "leave_and_remote_work_policy.md",
       "allowed_roles": [
