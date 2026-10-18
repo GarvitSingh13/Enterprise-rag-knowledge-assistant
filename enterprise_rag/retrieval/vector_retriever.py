@@ -26,30 +26,47 @@ class DenseEmbeddingModel:
         """Deterministically hash token string into an integer index."""
         return int(hashlib.md5(token.encode("utf-8")).hexdigest(), 16) % self.dimension
 
+    STOPWORDS = {
+        "what", "is", "the", "are", "for", "a", "an", "to", "in", "on", "of",
+        "and", "or", "it", "that", "this", "do", "does", "can", "our", "we", "be",
+    }
+
     def encode_text(self, text: str) -> np.ndarray:
-        """Encode a single text string into a normalized unit vector."""
+        """Encode text string into normalized unit semantic vector."""
         vec = np.zeros(self.dimension, dtype=np.float32)
         words = re.findall(r"\w+", text.lower())
 
         if not words:
             return vec
 
+        substantive: List[str] = []
         for word in words:
-            idx = self._hash_token(word)
-            vec[idx] += 1.0
+            if word in self.STOPWORDS:
+                continue
 
-            # Character 3-grams for subword semantic capture (e.g. 'deploy', 'deploying', 'deployment')
-            if len(word) >= 4:
-                for i in range(len(word) - 2):
-                    sub = word[i : i + 3]
+            # Root stem normalization
+            stem = word
+            if word.endswith("ing") and len(word) > 5:
+                stem = word[:-3]
+            elif word.endswith("ed") and len(word) > 4:
+                stem = word[:-2]
+            elif word.endswith("es") and len(word) > 4:
+                stem = word[:-2]
+            elif word.endswith("s") and len(word) > 3:
+                stem = word[:-1]
+
+            vec[self._hash_token(word)] += 1.0
+            if stem != word:
+                vec[self._hash_token(stem)] += 0.8
+            substantive.append(stem)
+
+        # Character 3-grams for subword semantic capture
+        for s in substantive:
+            if len(s) >= 4:
+                for i in range(len(s) - 2):
+                    sub = s[i : i + 3]
                     s_idx = self._hash_token(sub)
                     vec[s_idx] += 0.4
-
-        # Word bigrams for local word order context
-        for i in range(len(words) - 1):
-            bigram = f"{words[i]}_{words[i+1]}"
-            b_idx = self._hash_token(bigram)
-            vec[b_idx] += 0.6
 
         # L2 Normalize vector
         norm = np.linalg.norm(vec)
