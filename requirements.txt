@@ -10,5 +10,8 @@ pypdf>=4.0.0
 rank-bm25>=0.2.2
 numpy>=1.26.0
 
+# Security & Authentication (Stage 5)
+pyjwt>=2.8.0
+
 # Testing
 pytest>=8.0.0

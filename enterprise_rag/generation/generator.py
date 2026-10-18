@@ -70,32 +70,56 @@ class AnswerGenerator:
         primary_hit = viable_results[0]
         source_file = primary_hit.chunk.metadata.source_file
 
-        # Extract substantive informative sentences matching query keywords
-        q_words = set(re.findall(r"\w+", query.lower()))
+        # Substantive query terms (filtering English stopwords)
+        stopwords = {
+            "what", "is", "the", "are", "for", "a", "an", "to", "in", "on", "of",
+            "and", "or", "it", "that", "this", "do", "does", "can", "our", "we",
+            "be", "with", "as", "how", "much", "many", "i", "get", "by", "under",
+        }
+        q_words = [w for w in re.findall(r"\w+", query.lower()) if w not in stopwords and len(w) > 2]
+
         content_text = primary_hit.parent_context or primary_hit.chunk.content
-        sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", content_text) if s.strip()]
 
-        scored_sentences = []
-        for sent in sentences:
-            if sent.startswith("#") or len(sent) < 25:
+        # Split by bullet points or paragraphs to preserve policy clauses intact
+        raw_units = [u.strip() for u in re.split(r"\n+", content_text) if u.strip()]
+        units = []
+        for u in raw_units:
+            if u.startswith("#"):
                 continue
-            s_words = set(re.findall(r"\w+", sent.lower()))
-            overlap = len(q_words.intersection(s_words))
-            if overlap > 0:
-                scored_sentences.append((sent, overlap))
+            if len(u) > 20:
+                units.append(u)
 
-        scored_sentences.sort(key=lambda x: x[1], reverse=True)
+        if not units:
+            # Fallback to sentence split
+            units = [s.strip() for s in re.split(r"(?<=[.!?])\s+", content_text) if len(s.strip()) > 20]
 
-        if not scored_sentences:
-            # Fallback to the top chunk's first complete sentence
-            valid = [s for s in sentences if not s.startswith("#") and len(s) > 20]
+        scored_units = []
+        for unit in units:
+            u_words = re.findall(r"\w+", unit.lower())
+            score = 0.0
+            for qw in q_words:
+                if qw in u_words:
+                    score += 2.0
+                elif any(
+                    len(qw) >= 4 and len(uw) >= 4 and (qw[:4] in uw or uw[:4] in qw)
+                    for uw in u_words
+                ):
+                    score += 1.5
+
+            if score > 0.0:
+                scored_units.append((unit, score))
+
+        scored_units.sort(key=lambda x: x[1], reverse=True)
+
+        if not scored_units:
+            valid = [u for u in units if len(u) > 25]
             if valid:
                 return f"{valid[0]} [Source: {source_file}]"
             return self.REFUSAL_MESSAGE
 
-        # Take the top 1-3 most relevant sentences
-        selected_sentences = [s[0] for s in scored_sentences[:3]]
-        body = " ".join(selected_sentences)
+        # Take the top 1-2 most informative units
+        selected_units = [u[0] for u in scored_units[:2]]
+        body = " ".join(selected_units)
 
         # Append source citation
         return f"{body} [Source: {source_file}]"
