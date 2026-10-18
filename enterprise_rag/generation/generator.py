@@ -70,13 +70,27 @@ class AnswerGenerator:
         primary_hit = viable_results[0]
         source_file = primary_hit.chunk.metadata.source_file
 
-        # Substantive query terms (filtering English stopwords)
+        # Substantive query terms (filtering English stopwords and generic filler words)
         stopwords = {
             "what", "is", "the", "are", "for", "a", "an", "to", "in", "on", "of",
             "and", "or", "it", "that", "this", "do", "does", "can", "our", "we",
             "be", "with", "as", "how", "much", "many", "i", "get", "by", "under",
+            "give", "me", "best", "any", "all", "your", "my", "company", "annual",
         }
-        q_words = [w for w in re.findall(r"\w+", query.lower()) if w not in stopwords and len(w) > 2]
+        raw_q_words = [w for w in re.findall(r"\w+", query.lower()) if w not in stopwords and len(w) > 2]
+
+        def get_stem(word: str) -> str:
+            if word.endswith("ing") and len(word) > 5:
+                return word[:-3]
+            if word.endswith("ed") and len(word) > 4:
+                return word[:-2]
+            if word.endswith("es") and len(word) > 4:
+                return word[:-2]
+            if word.endswith("s") and len(word) > 3:
+                return word[:-1]
+            return word
+
+        q_stems = {get_stem(w) for w in raw_q_words}
 
         content_text = primary_hit.parent_context or primary_hit.chunk.content
 
@@ -90,31 +104,25 @@ class AnswerGenerator:
                 units.append(u)
 
         if not units:
-            # Fallback to sentence split
             units = [s.strip() for s in re.split(r"(?<=[.!?])\s+", content_text) if len(s.strip()) > 20]
 
         scored_units = []
         for unit in units:
-            u_words = re.findall(r"\w+", unit.lower())
-            score = 0.0
-            for qw in q_words:
-                if qw in u_words:
-                    score += 2.0
-                elif any(
-                    len(qw) >= 4 and len(uw) >= 4 and (qw[:4] in uw or uw[:4] in qw)
-                    for uw in u_words
-                ):
-                    score += 1.5
+            u_words = set(re.findall(r"\w+", unit.lower()))
+            u_stems = {get_stem(w) for w in u_words}
 
-            if score > 0.0:
-                scored_units.append((unit, score))
+            # Count distinct substantive query words matching this unit
+            matched_terms = q_stems.intersection(u_stems)
+            match_count = len(matched_terms)
+
+            if match_count > 0:
+                scored_units.append((unit, match_count))
 
         scored_units.sort(key=lambda x: x[1], reverse=True)
 
-        if not scored_units:
-            valid = [u for u in units if len(u) > 25]
-            if valid:
-                return f"{valid[0]} [Source: {source_file}]"
+        # Require at least 2 distinct substantive query terms (or all terms if query has fewer)
+        min_required_matches = min(2, len(q_stems)) if q_stems else 1
+        if not scored_units or scored_units[0][1] < min_required_matches:
             return self.REFUSAL_MESSAGE
 
         # Take the top 1-2 most informative units
@@ -157,6 +165,7 @@ class AnswerGenerator:
 
         sources_metadata = []
         for res in reranked_results:
+            content = res.parent_context if res.parent_context else res.chunk.content
             sources_metadata.append(
                 {
                     "title": res.chunk.metadata.title,
@@ -164,6 +173,7 @@ class AnswerGenerator:
                     "department": res.chunk.metadata.department.value,
                     "clearance": res.chunk.metadata.clearance_level.value,
                     "rerank_score": str(res.rerank_score),
+                    "content": content,
                 }
             )
 
