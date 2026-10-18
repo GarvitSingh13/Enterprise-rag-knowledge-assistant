@@ -10,6 +10,13 @@ Demonstrates:
 4. Executive Quality Scorecard for CI/CD gating.
 """
 
+import sys
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 from enterprise_rag.core.config import settings
 from enterprise_rag.ingestion.pipeline import IngestionPipeline
 from enterprise_rag.retrieval.hybrid_retriever import HybridRetriever

@@ -4,6 +4,13 @@ Run this script to ingest enterprise documents, extract metadata,
 produce parent-child chunks, and view the catalog statistics.
 """
 
+import sys
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 from enterprise_rag.core.config import settings
 from enterprise_rag.ingestion.pipeline import IngestionPipeline
 

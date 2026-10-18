@@ -13,6 +13,18 @@ Runs Stages 1 through 8 sequentially, confirming:
 
 import sys
 import time
+
+# Ensure Windows terminal handles UTF-8 emojis without charmap encoding errors
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+if sys.stderr and hasattr(sys.stderr, "reconfigure"):
+    try:
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 from enterprise_rag.core.config import settings
 from enterprise_rag.ingestion.pipeline import IngestionPipeline
 from enterprise_rag.retrieval.hybrid_retriever import HybridRetriever

@@ -6,6 +6,13 @@ Demonstrates:
 3. Authorized executive access with citation grounding.
 """
 
+import sys
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 from enterprise_rag.core.config import settings
 from enterprise_rag.ingestion.pipeline import IngestionPipeline
 from enterprise_rag.retrieval.hybrid_retriever import HybridRetriever

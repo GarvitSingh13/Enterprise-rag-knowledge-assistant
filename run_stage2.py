@@ -4,6 +4,13 @@ Executes queries comparing Pure BM25, Pure Vector, and Hybrid RRF,
 and demonstrates Document-Level Security (RBAC) and Parent Context Retrieval.
 """
 
+import sys
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 from enterprise_rag.core.config import settings
 from enterprise_rag.core.models import Department, ClearanceLevel
 from enterprise_rag.ingestion.pipeline import IngestionPipeline

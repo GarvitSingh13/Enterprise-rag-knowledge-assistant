@@ -5,6 +5,12 @@ at http://127.0.0.1:8000.
 """
 
 import sys
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 from enterprise_rag.api.server import create_app_server
 
 
